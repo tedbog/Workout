@@ -27,25 +27,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-    int _counter = 0;
+  int _counter = 0;
+  TabController _tabBarViewController;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter--;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: Colors.black,
+        appBar: AppBar(
+           backgroundColor: Colors.orange,
+           title: Text('30 ӨДРИЙН ФИТНЕСС'),
+        ),
+        backgroundColor: Colors.white,
         body: TabBarView(
+          controller: _tabBarViewController,
           children: [
             plan.Plan(),
             challenges.Challenges(),
@@ -56,20 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomNavigationBar: new TabBar(
           tabs: [
             Tab(
-              icon: new Icon(Icons.assignment),
+              icon: new Icon(Icons.assignment, size: 40,),
             ),
             Tab(
-              child: Text('30'),
+              child: Text('30', style: TextStyle(fontSize: 30),),
             ),
             Tab(
-              icon: new Icon(Icons.assessment),
+              icon: new Icon(Icons.assessment,size: 40,),
             ),
             Tab(
-              icon: new Icon(Icons.perm_identity),
+              icon: new Icon(Icons.perm_identity,size: 40,),
             )
           ],
-          labelColor: Colors.greenAccent,
-          unselectedLabelColor: Colors.grey,
+          labelColor: Colors.orange,
+          unselectedLabelColor: Colors.black,
           indicatorSize: TabBarIndicatorSize.label,
           indicatorPadding: EdgeInsets.all(5.0),
           indicatorColor: Colors.black,
