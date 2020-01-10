@@ -35,11 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
+        
         appBar: AppBar(
            backgroundColor: Colors.orange,
            title: Text('30 ӨДРИЙН ФИТНЕСС'),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.orange,
         body: TabBarView(
           controller: _tabBarViewController,
           children: [
@@ -64,11 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: new Icon(Icons.perm_identity,size: 40,),
             )
           ],
-          labelColor: Colors.orange,
+          labelColor: Colors.white,
           unselectedLabelColor: Colors.black,
           indicatorSize: TabBarIndicatorSize.label,
           indicatorPadding: EdgeInsets.all(5.0),
-          indicatorColor: Colors.black,
+          indicatorColor: Colors.white,
         ),
       ),
     );
